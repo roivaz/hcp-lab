@@ -8,6 +8,8 @@ locals {
   workers_type     = "t3a.2xlarge"
   workers_count    = 1
   name             = join("-", [local.environment, local.project, local.cluster])
-  domain           = "example.com"
+  domain           = "hcp-lab.dev.3sca.net"
   oidc_bucket_name = "my-oidc-bucket"
+  vpc_id           = module.vpc.vpc_id
+  subnet_ids       = [module.vpc.private_subnets[0]]
 }

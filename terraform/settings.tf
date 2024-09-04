@@ -11,6 +11,8 @@ provider "helm" {
   }
 }
 
+# vault provider is not used in this example
+# but Terraform requires that it's declared
 provider "vault" {
-  address = "https://vault.mgmt.3sca.net"
+  address = "https://placeholder"
 }

@@ -4,8 +4,8 @@ module "hostedcluster" {
   environment           = local.environment
   project               = local.project
   cluster               = local.cluster
-  vpc_id                = module.vpc.vpc_id
-  subnet_ids            = [module.vpc.private_subnets[0]]
+  vpc_id                = local.vpc_id
+  subnet_ids            = local.subnet_ids
   oidc_bucket_name      = local.oidc_bucket_name
   consumer_domain       = local.domain
   release_image         = "quay.io/openshift-release-dev/ocp-release:${local.cluster_version}-multi-x86_64"
